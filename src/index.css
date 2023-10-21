@@ -1,0 +1,153 @@
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+
+ body {
+   margin: 0;
+   font-family: 'DM Sans';
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   background-color: #ECF1F9 !important;
+   height: 100dvh;
+   background-image: radial-gradient(78.15% 78.15% at 50% 0%, #F7E7F0 10%, rgba(247, 231, 240, 0.00) 100%) !important;
+
+ }
+
+ /*********** comman classes ***********/
+
+ :root {
+   --primary: #A633CC;
+   --Purple-100: #f6ebfa;
+   --Purple-200: #f2e0f7;
+   --Purple-300: #e3bfef;
+   --Purple-400: #a632cc;
+   --Purple-500: #952db8;
+   --Purple-600: #8528a3;
+   --Purple-700: #7d2699;
+   --Purple-800: #641e7a;
+   --Purple-900: #4b165c;
+   --Purple-1000: #3a1247;
+   --Purple-1100: #fbeefd;
+   --Purple-1200: #d459e8;
+   --Purple-1300: #eddef4;
+   --green-100: #dfe9eb;
+   --green-200: #e7f7eb;
+   --green-300: #46bd84;
+   --green-400: #13b436;
+   --blue-100: #d7e8f8;
+   --blue-200: #eaf3f8;
+   --blue-300: #08a0f7;
+   --blue-400: #2e87ba;
+   --orange-300: #fba63c;
+   --orange-200: #f1e8df;
+   --orange-100: #fff7e7;
+   --grey: #888888;
+   --white: #FFFFFF;
+   --black: #151515;
+ }
+
+ /*********** border radius ***********/
+
+ .br-4 {
+   border-radius: 4px;
+ }
+
+ .br-6 {
+   border-radius: 6px;
+ }
+
+ .br-8 {
+   border-radius: 8px;
+ }
+
+ .br-10 {
+   border-radius: 10px;
+ }
+
+ .br-12 {
+   border-radius: 12px;
+ }
+
+ /*********** font size ***********/
+
+ .fs-16 {
+   font-size: 16px;
+ }
+
+ .fs-18 {
+   font-size: 18px;
+ }
+
+ .fs-20 {
+   font-size: 20px;
+ }
+
+ .fs-24 {
+   font-size: 24px;
+ }
+
+ .fs-30 {
+   font-size: 30px;
+ }
+
+ /*********** font weignt ***********/
+
+ .fw-400 {
+   font-weight: 700;
+ }
+
+ .fw-500 {
+   font-weight: 700;
+ }
+
+ .fw-600 {
+   font-weight: 600;
+ }
+
+ .fw-700 {
+   font-weight: 700;
+ }
+
+ /*********** Dispay Flex  ***********/
+
+ .flex {
+   display: flex;
+ }
+
+ .jc-center {
+   justify-content: center;
+ }
+
+ .jc-spaceBetween {
+   justify-content: space-between;
+ }
+
+ .ai-center {
+   align-items: center;
+ }
+
+
+
+
+
+ /*********** Header Css ***********/
+
+ .px-30 {
+   padding-left: 30px;
+   padding-right: 30px;
+ }
+
+ .py-35 {
+   padding-top: 29px;
+   padding-bottom: 29px;
+ }
+
+ .header-css {
+   background-color: var(--white);
+   border-radius: 0 0 12px 12px;
+   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.04));
+ }
+
+ /********** LeftSection **********/
+
+ .main-LeftSection {
+   padding: 30px;
+ }
