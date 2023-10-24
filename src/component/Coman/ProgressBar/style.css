@@ -1,0 +1,26 @@
+.progressbar{
+    width: 100%;
+    height: 6px;
+    /* background-color: #EDDEF4; */
+    border-radius: 30px;
+}
+
+.move-progressbar{
+    width: 90%;
+    height: 6px;
+    /* background-color: #D459E8; */
+    border-radius: 30px;
+}
+.total-task{
+    color: var(--grey);
+}
+@media (max-width: 1280px) {
+    .user-name{
+        font-size: var(--fs-16);
+    }
+    .completed-task{
+        font-size: var(--fs-14);
+    }
+}
+
+

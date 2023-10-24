@@ -1,0 +1,67 @@
+.task {
+    padding: 15px;
+    border: 1px solid var(--Purple-1100);
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.04));
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title-card {
+    gap: 20px;
+}
+
+.project-title {
+    background: rgba(46, 135, 186, 0.10);
+    padding: 6px 15px;
+}
+
+.project-title>.title {
+    color: var(--blue-400);
+}
+
+.show-detail {
+    transform: translate(0px, -7px) !important;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.title {
+    color: var(--grey);
+}
+
+.user-image {
+    gap: 10px;
+}
+
+.user-img-task {
+    width: 30px;
+    height: 30px;
+}
+
+.task-card-main {
+    height: calc(100% - 100px);
+}
+
+.arrow {
+    width: 12px;
+    height: 10px;
+}
+
+@media (max-width: 1440px) {
+    .title {
+        font-size: var(--fs-16);
+    }
+
+    .task {
+        padding: 15px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .arrow {
+        width: 12px;
+        height: 10px;
+    }
+}

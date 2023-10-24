@@ -5,8 +5,8 @@
    font-family: 'DM Sans';
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
+   background-repeat: no-repeat;
    background-color: #ECF1F9 !important;
-   height: 100dvh;
    background-image: radial-gradient(78.15% 78.15% at 50% 0%, #F7E7F0 10%, rgba(247, 231, 240, 0.00) 100%) !important;
 
  }
@@ -32,16 +32,67 @@
    --green-200: #e7f7eb;
    --green-300: #46bd84;
    --green-400: #13b436;
-   --blue-100: #d7e8f8;
+   --blue-100: #D9E6F6;
    --blue-200: #eaf3f8;
    --blue-300: #08a0f7;
    --blue-400: #2e87ba;
-   --orange-300: #fba63c;
+   --orange-300: #FFB214;
    --orange-200: #f1e8df;
    --orange-100: #fff7e7;
+   --grey-100: #B4C5D8;
    --grey: #888888;
    --white: #FFFFFF;
    --black: #151515;
+   --fs-12: 12px;
+   --fs-14: 14px;
+   --fs-16: 16px;
+   --fs-18: 18px;
+   --fs-20: 20px;
+   --fs-22: 22px;
+   --fs-24: 24px;
+   --fs-26: 26px;
+   --fs-30: 30px;
+ }
+
+ /* color comon */
+
+.Purple-1200{
+  background-color: #d459e8;
+}
+.Purple-1300{
+  background-color: #eddef4;
+}
+ .green-300 {
+   background-color: var(--green-300) !important;
+ }
+
+ .green-100 {
+   background-color: var(--green-100) !important;
+ }
+
+ .blue-300 {
+   background-color: var(--blue-300);
+ }
+
+ .blue-100 {
+   background-color: var(--blue-100);
+ }
+
+ .orange-300 {
+   background-color: var(--orange-300);
+ }
+
+ .orange-200 {
+   background-color: var(--orange-200);
+ }
+
+ .primary {
+   color: var(--primary);
+ }
+
+
+ .primary-bg {
+   background-color: var(--primary);
  }
 
  /*********** border radius ***********/
@@ -66,36 +117,49 @@
    border-radius: 12px;
  }
 
+ .br-50 {
+   border-radius: 50px;
+ }
+
  /*********** font size ***********/
 
  .fs-16 {
-   font-size: 16px;
+   font-size: var(--fs-16);
  }
 
  .fs-18 {
-   font-size: 18px;
+   font-size: var(--fs-18);
  }
 
  .fs-20 {
-   font-size: 20px;
+   font-size: var(--fs-20);
+ }
+
+ .fs-22 {
+   font-size: var(--fs-22);
  }
 
  .fs-24 {
-   font-size: 24px;
+   font-size: var(--fs-24);
  }
 
+ .fs-26 {
+   font-size: var(--fs-26);
+ }
+
+
  .fs-30 {
-   font-size: 30px;
+   font-size: var(--fs-30);
  }
 
  /*********** font weignt ***********/
 
  .fw-400 {
-   font-weight: 700;
+   font-weight: 400;
  }
 
  .fw-500 {
-   font-weight: 700;
+   font-weight: 500;
  }
 
  .fw-600 {
@@ -104,6 +168,10 @@
 
  .fw-700 {
    font-weight: 700;
+ }
+
+ .lh-0 {
+   line-height: 0;
  }
 
  /*********** Dispay Flex  ***********/
@@ -124,8 +192,15 @@
    align-items: center;
  }
 
+ .flex-direction {
+   flex-direction: column;
+ }
 
+ /* gap */
 
+ .gap-10 {
+   gap: 10px;
+ }
 
 
  /*********** Header Css ***********/
@@ -135,9 +210,9 @@
    padding-right: 30px;
  }
 
- .py-35 {
-   padding-top: 29px;
-   padding-bottom: 29px;
+ .py-20 {
+   padding-top: 20px;
+   padding-bottom: 20px;
  }
 
  .header-css {
@@ -150,4 +225,58 @@
 
  .main-LeftSection {
    padding: 30px;
+   width: 75%;
+   border-right: 1px solid var(--grey-100);
+ }
+
+ @media (max-width: 1440px) {
+   .main-LeftSection {
+     padding: 20px;
+   }
+ }
+
+ /********** RightSection **********/
+
+ .main-RightSection {
+   padding: 30px;
+   width: 25%;
+ }
+
+ @media (max-width: 1440px) {
+   .main-RightSection {
+     padding: 20px;
+   }
+ }
+
+ /* main-section */
+
+ .main-section {
+   height: calc(100dvh - 82px);
+ }
+
+ @media (max-width: 1130px) {
+   .main-section {
+     flex-wrap: wrap;
+   }
+
+   .main-LeftSection {
+     width: 100%;
+     border: none;
+   }
+
+   .main-RightSection {
+     width: 100%;
+   }
+ }
+
+ @media (max-width: 768px) {
+   .header-css {
+     padding-left: 15px;
+     padding-right: 15px;
+   }
+
+   .main-LeftSection {
+     padding-left: 15px;
+     padding-right: 15px;
+   }
  }
