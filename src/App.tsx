@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import './App.css';
 import Header from './component/Coman/Header';
 import LeftSection from './component/LeftSection';
 import RightSection from './component/RightSection';
+import { CustomModal } from './component/modal/CardModal'
 // import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 
@@ -13,23 +15,33 @@ import RightSection from './component/RightSection';
 // ]);
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+
   return (
     <div>
-      <div className='header-css px-30 py-20' >
-        <Header />
-      </div>
-      <div className='main-section flex'>
-        <div className='main-LeftSection '>
-          <LeftSection />
+        {/* <button onClick={openModal}>Open Modal</button> */}
+        <div className='header-css px-30 py-20' >
+          <Header />
         </div>
-        <div className='main-RightSection '>
-          <RightSection/>
+        <div className='main-section flex'>
+          <div className='main-LeftSection '>
+            <LeftSection />
+          </div>
+          <div className='main-RightSection '>
+            <RightSection />
+          </div>
         </div>
-      </div>
+        <CustomModal show={showModal} handleClose={closeModal} />
     </div>
-    // <React.StrictMode>
-    //   <RouterProvider router={router} />
-    // </React.StrictMode>
   );
 }
 

@@ -1,0 +1,326 @@
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: 'rgba(0, 0, 0, 0.30)';
+    z-index: 1000;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+
+    z-index: 1000;
+    max-width: 1130px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-content>.card-wrapper {
+    padding: 30px;
+    display: flex;
+    justify-content: flex-start;
+    /* align-items: center; */
+    height: auto;
+}
+
+.modal-content>.card-wrapper>.card-description {
+    width: 637px;
+    height: 100%;
+    padding-right: 30px;
+    border-right: 1px solid #B4C5D8;
+}
+.modal-content>.card-wrapper>.card-description > .card-descriptio-close-icon{
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-description-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-description-header>.card-label {
+    max-width: 110px;
+    height: 38px;
+    border-radius: 30px;
+    background: rgba(46, 135, 186, 0.10);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-description-header>.card-label>.label {
+    color: #2E87BA;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    padding: 6px 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-description-header>.card-date-label {
+    text-align: right;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--primary);
+
+}
+
+.modal-content>.card-wrapper>.card-description>.filter-section {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+}
+
+.modal-content>.card-wrapper>.card-description>.filter-section>.description-lable {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    height: 100%;
+}
+
+.modal-content>.card-wrapper>.card-description>.filter-section>.description-lable>label {
+    color: #151515;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+
+}
+
+.modal-content>.card-wrapper>.card-description>.filter-section>.filter-drop-down {
+    width: 168px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content>.card-wrapper>.card-description>.description-section {
+    margin-top: 20px;
+}
+
+.modal-content>.card-wrapper>.card-description>.description-section>.description {
+    color: #888;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    white-space: pre-wrap;
+}
+
+.modal-content>.card-wrapper>.card-description>.comment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-content>.card-wrapper>.card-description>.comment-section>.comment-section-label {
+    color: #151515;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.modal-content>.card-wrapper>.card-description>.comment-section>.comment-section-input {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-content>.card-wrapper>.card-description>.comment-section>.comment-section-input>.comment-section-user {
+    height: 46px;
+    width: 46px;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.35);
+}
+
+.modal-content>.card-wrapper>.card-description>.comment-section>.comment-section-input>.comment-section-input-field {
+    flex: 1;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-section-user {
+    height: 46px;
+    width: 46px;
+    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.35);
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-details {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-details>.user-name {
+    color: #151515;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-details>.time {
+    color: #888;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-sample-text {
+    margin-top: 15px;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-sample-text span {
+    color: #888;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-action-btn {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-action-btn .action-btn{
+    height: 20px;
+    width: 20px;
+    background: #13B436;
+    border-radius: 4px;
+}
+
+.modal-content>.card-wrapper>.card-details {
+    width: 435px;
+    height: 100%;
+    padding-left: 30px;
+}
+.modal-content>.card-wrapper>.card-details > .close-icon{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    cursor: pointer;
+}
+.modal-content>.card-wrapper>.card-details > .close-icon > span{
+    font-size: 22px;
+}
+.modal-content>.card-wrapper>.card-details > .to-do-drop-down-section{
+    width: 113px;
+    height: 44px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #B4C5D8;
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+.modal-content>.card-wrapper>.card-details > .detailsdrop-down-section{
+    width: 100%;
+    margin-top: 15px;
+}
+.modal-content>.card-wrapper>.card-details > .detailsdrop-down-section > .detailsdrop-down{
+    width: 100%;
+    height: 44px;
+    padding: 10px 15px;
+    display: flex;
+    
+    align-items: center;
+    border: 1px solid #B4C5D8;
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.modal-content>.card-wrapper>.card-details > .log-time-checker{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+.modal-content>.card-wrapper>.card-details > .log-time-checker > .time{
+    color: #888;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@media screen and (max-width:1280px) {
+    .modal-content{
+        width: 750px;
+    }
+    .modal-content>.card-wrapper{
+        flex-direction: column;
+    }
+    
+    .modal-content>.card-wrapper>.card-description{
+        width: 100%;
+        border: 0;
+        padding-right: 0;
+    }
+    .modal-content>.card-wrapper>.card-details{
+        padding-left: 0;
+    }
+}
+@media screen and (max-width:768px) {
+    .modal-content{
+        width: 500px;
+    }
+}
+@media screen and (max-width:425px) {
+    .modal-content{
+        width: 320px;
+    }
+}
