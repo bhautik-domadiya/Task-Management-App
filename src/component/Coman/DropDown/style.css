@@ -1,0 +1,65 @@
+custom-dropdown.css
+
+/* Dropdown container */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Dropdown toggle button */
+  .dropdown-toggle {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Placeholder text */
+  .placeholder {
+    color: #888;
+  }
+  
+  /* Dropdown icon */
+  .dropdown-icon {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+  
+  /* Dropdown options */
+  .dropdown-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+  }
+  
+  /* Show the options when the dropdown is open */
+  .open .dropdown-options {
+    display: block;
+  }
+  
+  /* Individual option */
+  .dropdown-options li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover effect for options */
+  .dropdown-options li:hover {
+    background-color: #f0f0f0;
+  }
+  

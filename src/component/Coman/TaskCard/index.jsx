@@ -1,9 +1,9 @@
 import "../TaskCard/style.css"
 
 export default function TaskCard(props) {
-    const { projectName, projectTitle, workArrow } = props;
+    const { projectName, projectTitle, workArrow,onClick } = props;
     return (
-        <div className="task-card-main task br-12 flex ">
+        <div onClick={onClick} className="task-card-main task br-12 flex ">
             <div className="flex jc-spaceBetween">
                 <div className="project-title br-50">
                     <span className="title fs-18 fw-500" >{projectName}</span>
@@ -26,7 +26,6 @@ export default function TaskCard(props) {
                     <img src="assets/icon/Edit.png" />
                 </div>
             </div>
-
         </div>
     )
 }

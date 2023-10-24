@@ -5,7 +5,7 @@ import TaskCard from "../TaskCard"
 
 export default function BoardCard(props :any) {
 
-    const {heading,totalNo} = props;
+    const {heading,totalNo,onClick} = props;
 
     const tackCardData = [
         {
@@ -41,7 +41,7 @@ export default function BoardCard(props :any) {
             <div className="flex ticket-card">
                 {tackCardData.map((items) => {
                     return (
-                        <TaskCard key={items.id} projectName={items.projectName} projectTitle={items.projectTitle} workArrow={items.workArrow} />
+                        <TaskCard onClick={onClick} key={items.id} projectName={items.projectName} projectTitle={items.projectTitle} workArrow={items.workArrow} />
                     )
                 })}
             </div>

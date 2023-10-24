@@ -7,7 +7,6 @@ export default function ProgressBar(props: any) {
             completedTask,
             bgColor,
             textColor }=progressData;
-            console.log("bgColor",bgColor)
     return (
         <div className="flex flex-direction gap-10">
             <div className="flex jc-spaceBetween ">

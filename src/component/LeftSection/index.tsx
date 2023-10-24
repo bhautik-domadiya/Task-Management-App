@@ -1,6 +1,8 @@
+import { useState } from "react"
 import BoardCard from "../Coman/BoardCard"
 import MobileView from "../Coman/MobileView"
 import "../LeftSection/style.css"
+import { CustomModal } from "../modal/CardModal"
 
 
 const boardHeading = [
@@ -20,8 +22,21 @@ const boardHeading = [
         totalNo: "1"
     },
 ]
+
+
+
 export default function LeftSection() {
+    const [showModal, setShowModal] = useState(false);
+
+const openModal = () => {
+  setShowModal(true);
+};
+
+const closeModal = () => {
+  setShowModal(false);
+};
     return (
+        <>
         <div className="board-main">
             <div className=" board-section flex jc-spaceBetween" >
                 <span className="mobile-change fs-30 fw-700" >Board</span>
@@ -39,15 +54,17 @@ export default function LeftSection() {
                 <div className="board-card-all flex">
                     {boardHeading.map((items) => {
                         return (
-                            <BoardCard heading={items.heading} totalNo={items.totalNo} />
+                            <BoardCard onClick={openModal} heading={items.heading} totalNo={items.totalNo} />
                         )
                     })}
                 </div>
             </div>
             <div className="mobile-card">
                 <MobileView/>
-                 <BoardCard heading="To Do" totalNo="3" />
+                 <BoardCard onClick={openModal} heading="To Do" totalNo="3" />
             </div>
         </div>
+           <CustomModal  show={showModal} handleClose={closeModal} />
+           </>
     )
 }

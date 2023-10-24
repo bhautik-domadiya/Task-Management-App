@@ -23,21 +23,28 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
 
     return (<>
         <div className="overlay" style={overlayStyle}></div>
+        
         <div className="modal" style={modalStyle}>
+            
             <div className="modal-content">
                 <div className='card-wrapper'>
                     <div className='card-description'>
+                    <div className='close-icon flex' onClick={() => handleClose()}>
+                            <span className='fs-20 fw-600'  >x</span>
+                        </div>
                         <div className='card-description-header'>
                             <div className='card-label'><span className='label'>Nangita</span></div>
                             <span className='card-date-label'>Due Date : 19 Oct, 2023</span>
                         </div>
                         <div className='filter-section'>
                             <div className="description-lable">
-                                <span className='label'>Description</span>
-                                <span>icon</span>
+                                <span className='label fs-18 fw-500'>Description</span>
+                                <img className='edit' src="assets/icon/Edit.png" />
                             </div>
                             <div className="filter-drop-down">
-                                <span>dowp-down</span>
+                                <img src='assets/icon/upArrow.png' />
+                                <span className='fs-18 fw-400'>Very high</span>
+                                <img src='assets/icon/Stroke.svg' />
                             </div>
                         </div>
                         <div className='description-section'>
@@ -50,8 +57,8 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                         <div className='comment-section'>
                             <span className='comment-section-label'>Comments</span>
                             <div className='comment-section-input'>
-                                <div className='comment-section-user'>
-                                    B
+                                <div className="comment-section-user br-8 flex ai-center  jc-center">
+                                    <span className="fs-26 fw-700">B</span>
                                 </div>
                                 <div className='comment-section-input-field'>
                                     add seach section
@@ -59,8 +66,8 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                             </div>
                         </div>
                         <div className='card-info-section'>
-                            <div className='card-info-section-user'>
-                                B
+                            <div className="card-info-section-user br-8 flex ai-center  jc-center">
+                                <span className="fs-26 fw-700">B</span>
                             </div>
                             <div className='card-info-details'>
                                 <div className='card-user-info-details'>
@@ -71,24 +78,30 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                                     <span>Lorem Ipsum is simply dummy text.</span>
                                 </div>
                                 <div className='card-user-info-action-btn'>
-                                    <div className='action-btn' />
-                                    <div className='action-btn' />
-                                    <div className='action-btn' />
+                                    <div className='action-btn' >
+                                        <img src="assets/icon/Edit-img.svg" alt="" />
+                                    </div>
+                                    <div className='action-btn' >
+                                        <img src="assets/icon/delete.svg" alt="" />
+                                    </div>
+                                    <div className='action-btn' >
+                                        <img src="assets/icon/emoji-smile.svg" alt="" />
+                                    </div>
 
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className='card-details'>
-                        <div className='close-icon' onClick={()=>handleClose()}>
-                            <span >x</span>
-                        </div>
+                      
                         <div className='to-do-drop-down-section'>
-                            <span>to-do</span>
+                            <span>To Do</span>
+                            <img className='down' src="assets/icon/down.svg" alt="" />
                         </div>
-                        <div  className='detailsdrop-down-section'>
+                        <div className='detailsdrop-down-section'>
                             <div className='detailsdrop-down'>
-                                <span>to-do</span>
+                                <span>Details</span>
+                                <img className='down' src="assets/icon/down.svg" alt="" />
                             </div>
                         </div>
                         <div className='log-time-checker'>
