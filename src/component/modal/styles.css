@@ -86,7 +86,7 @@
 }
 
 .modal-content>.card-wrapper>.card-description>.filter-section {
-
+margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,7 +97,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-start;
-    align-items: end;
+    align-items: center;
     height: 100%;
     gap: 10px;
 }
@@ -110,7 +110,8 @@
 
 }
 
-.modal-content>.card-wrapper>.card-description>.filter-section>.filter-drop-down {
+.drop-down >.filter-drop-down {
+    width: 168px;
     height: 100%;
     gap: 6px;
     display: flex;
@@ -121,6 +122,9 @@
     border: 1px solid var(--Purple-200);
     box-sizing: border-box;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+}
+.drop-down{
+    position: relative;
 }
 
 .modal-content>.card-wrapper>.card-description>.description-section {
@@ -175,6 +179,7 @@
 }
 
 .modal-content>.card-wrapper>.card-description>.comment-section>.comment-section-input>.comment-section-input-field {
+    height: 40px;
     flex: 1;
 }
 
@@ -255,6 +260,12 @@
     width: 17px;
     height: 17px;
 }
+.delete{
+    background: var(--peach) !important;
+}
+.emoji {
+    background: var(--orange-100) !important;
+}
 .modal-content>.card-wrapper>.card-details {
     width: 435px;
     height: 100%;
@@ -275,7 +286,7 @@
     font-size: 22px;
 }
 
-.modal-content>.card-wrapper>.card-details>.to-do-drop-down-section {
+.to-do-drop-down-section {
     width: 113px;
     height: 44px;
     padding: 10px 15px;
@@ -293,11 +304,12 @@
 .modal-content>.card-wrapper>.card-details>.detailsdrop-down-section {
     width: 100%;
     margin-top: 15px;
+    position: relative;
 }
 
 .modal-content>.card-wrapper>.card-details>.detailsdrop-down-section>.detailsdrop-down {
     width: 100%;
-    height: 44px;
+    height: 56px;
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
@@ -338,8 +350,16 @@
     justify-content: end;
     color: #999999;
 }
-
+.close-mobile{
+    display: none;
+}
 @media screen and (max-width:1280px) {
+    .colse-display{
+        display: none !important;
+    }
+    .close-mobile{
+        display: flex;
+    }
     .modal-content {
         width: 750px;
     }
@@ -376,11 +396,133 @@
         width: 40px;
         height: 40px;
     }
+    .details-popup{
+        height: 130px;
+    overflow-x: scroll;
+    }
 }
+
+.input-send-box {
+    position: relative;
+    height: 40px;
+    width: 644px;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #CECECE;
+}
+
+.input-send-box i,
+.input-send-box .button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-send-box i {
+    left: 20px;
+    font-size: 20px;
+    color: #707070;
+}
+
+.input-send-box input {
+    height: 40px;
+    width: 90%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    padding: 0 40px 0 10px;
+    background-color: transparent;
+}
+
+.input-send-box .button {
+    right: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+}
+
+.input-send-box .button:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+.notification-img {
+    width: 25px;
+    height: 25px;
+}
+
+.send-button{
+    position: absolute;
+    right: 0;
+    transform: translate(-7px, 2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A632CC;
+    border-radius: 6px;
+    /* margin: 7px; */
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  /* .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } */
+
+
+
+
 
 @media screen and (max-width:768px) {
     .modal-content {
-        width: 500px;
+        width: 100%;
+      
     }
 
     .modal-content>.card-wrapper {
@@ -392,4 +534,51 @@
     .modal-content {
         width: 350px;
     }
+    .drop-down >.filter-drop-down{
+        width: auto;
+        height: 100%;
+    }
+    .drop-down >.filter-drop-down>span{
+        font-size: var(--fs-16);
+    }
+    .to-do-drop-down-section{
+        margin-top: 15px;
+        height: 40px;
+    }
+    .to-do-drop-down-section>span{
+        font-size: 16px;
+    }
+    .modal-content>.card-wrapper>.card-description>.description-section{
+        margin-top: 15px;
+    }
+    .modal-content>.card-wrapper>.card-description>.comment-section{
+margin-top: 15px;
+    }
+    .modal-content>.card-wrapper>.card-description>.card-info-section{
+        margin-top: 15px;
+    }
+    .modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-details{
+        flex-direction: column  ;
+    }
+    .modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details{
+        margin-top: 0;
+    }
+    .modal-content>.card-wrapper>.card-description>.card-info-section>.card-info-details>.card-user-info-sample-text{
+        margin-top: 10px;
+    }
+    .modal-content>.card-wrapper>.card-details>.detailsdrop-down-section{
+        margin-top: 10px;
+    }
+    .modal-content>.card-wrapper>.card-details>.detailsdrop-down-section>.detailsdrop-down{
+        height: 40px;
+    }
+    .modal-content>.card-wrapper>.card-details>.detailsdrop-down-section>.detailsdrop-down>span{
+        font-size: 16px;
+    }
+    .details-popup{
+        padding: 10px;
+        height: 130px;
+    overflow-x: scroll;
+    }
+    
 }

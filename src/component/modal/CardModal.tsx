@@ -1,4 +1,9 @@
+import { useState } from 'react';
+import PriorityPopup from '../Coman/PriorityPopup';
 import './styles.css';
+import ToDoPopup from '../Coman/ToDoPopup';
+import DetailsPopup from '../Coman/DetailsPopup';
+import Profile from '../Coman/Profile';
 
 interface CustomModalProps {
     show: boolean;
@@ -21,15 +26,20 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
         zIndex: 1000,
     };
 
+    const [isPopupOpen, setPopupOpen] = useState(false);
+    const [isToDoOpen, setToDoOpen] = useState(false);
+    const [isDetails, setDetails] = useState(false);
+
+
     return (<>
         <div className="overlay" style={overlayStyle}></div>
-        
-        <div className="modal" style={modalStyle}>
-            
+
+        <div className="modal" style={modalStyle} >
+
             <div className="modal-content">
                 <div className='card-wrapper'>
                     <div className='card-description'>
-                    <div className='close-icon flex' onClick={() => handleClose()}>
+                        <div className='close-icon close-mobile flex' onClick={() => handleClose()}>
                             <span className='fs-20 fw-600'  >x</span>
                         </div>
                         <div className='card-description-header'>
@@ -39,12 +49,15 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                         <div className='filter-section'>
                             <div className="description-lable">
                                 <span className='label fs-18 fw-500'>Description</span>
-                                <img className='edit' src="assets/icon/Edit.png" />
+                                <img alt='edit-img' className='edit' src="assets/icon/Edit.png" />
                             </div>
-                            <div className="filter-drop-down">
-                                <img src='assets/icon/upArrow.png' />
-                                <span className='fs-18 fw-400'>Very high</span>
-                                <img src='assets/icon/Stroke.svg' />
+                            <div className='drop-down'>
+                                <div className="filter-drop-down" onClick={() => setPopupOpen(true)}>
+                                    <img alt='upArrow' src='assets/icon/upArrow.png' />
+                                    <span className='fs-18 fw-400'>Very high</span>
+                                    <img alt='Stroke' src='assets/icon/Stroke.svg' />
+                                </div>
+                                <PriorityPopup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
                             </div>
                         </div>
                         <div className='description-section'>
@@ -57,18 +70,22 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                         <div className='comment-section'>
                             <span className='comment-section-label'>Comments</span>
                             <div className='comment-section-input'>
-                                <div className="comment-section-user br-8 flex ai-center  jc-center">
-                                    <span className="fs-26 fw-700">B</span>
-                                </div>
+                                <Profile />
                                 <div className='comment-section-input-field'>
-                                    add seach section
+                                    <div className="input-send-box">
+                                        <div className='send-button'>
+                                            <img alt='send-img' className="uil uil-search" src="assets/icon/Send.svg" />
+                                        </div>
+                                        <input type="text" placeholder="Search here..." />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className='card-info-section'>
-                            <div className="card-info-section-user br-8 flex ai-center  jc-center">
+                            {/* <div className="card-info-section-user br-8 flex ai-center  jc-center">
                                 <span className="fs-26 fw-700">B</span>
-                            </div>
+                            </div> */}
+                            <Profile />
                             <div className='card-info-details'>
                                 <div className='card-user-info-details'>
                                     <span className='user-name'>Brooklyn Simmons</span>
@@ -79,13 +96,13 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                                 </div>
                                 <div className='card-user-info-action-btn'>
                                     <div className='action-btn' >
-                                        <img src="assets/icon/Edit-img.svg" alt="" />
+                                        <img  src="assets/icon/Edit-img.svg" alt="edit" />
                                     </div>
-                                    <div className='action-btn' >
-                                        <img src="assets/icon/delete.svg" alt="" />
+                                    <div className='action-btn delete' >
+                                        <img src="assets/icon/delete.svg" alt="delete" />
                                     </div>
-                                    <div className='action-btn' >
-                                        <img src="assets/icon/emoji-smile.svg" alt="" />
+                                    <div className='action-btn emoji' >
+                                        <img src="assets/icon/emoji-smile.svg" alt="emoji" />
                                     </div>
 
                                 </div>
@@ -93,16 +110,22 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                         </div>
                     </div>
                     <div className='card-details'>
-                      
-                        <div className='to-do-drop-down-section'>
-                            <span>To Do</span>
-                            <img className='down' src="assets/icon/down.svg" alt="" />
+                        <div className='close-icon colse-display flex' onClick={() => handleClose()}>
+                            <span className='fs-20 fw-600'  >x</span>
                         </div>
-                        <div className='detailsdrop-down-section'>
-                            <div className='detailsdrop-down'>
-                                <span>Details</span>
+                        <div className='drop-down'>
+                            <div className='to-do-drop-down-section' onClick={() => setToDoOpen(true)}>
+                                <span className='fs-18 fw-400   ' >To Do</span>
                                 <img className='down' src="assets/icon/down.svg" alt="" />
                             </div>
+                            <ToDoPopup isOpen={isToDoOpen} onClose={() => setToDoOpen(false)} />
+                        </div>
+                        <div className='detailsdrop-down-section'>
+                            <div className='detailsdrop-down' onClick={() => setDetails(true)}>
+                                <span className='fs-20 fw-400s'>Details</span>
+                                <img className='down' src="assets/icon/down.svg" alt="" />
+                            </div>
+                            <div><DetailsPopup isOpen={isDetails} onClose={() => setDetails(false)} /></div>
                         </div>
                         <div className='log-time-checker'>
                             <span className='time'>Created 2 hour ago</span>

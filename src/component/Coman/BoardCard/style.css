@@ -28,9 +28,7 @@
     .ticket-card {
         padding: 15px;
     }
-    .heading{
-        font-size: var(--fs-22);
-    }
+
   }
   @media (max-width: 1280px) {
     .heading{

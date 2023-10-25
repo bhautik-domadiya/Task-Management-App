@@ -28,7 +28,7 @@ export default function BoardCard(props :any) {
         },
     ]
     return (
-        <div className="board-card br-12">
+        <div className="board-card br-10">
             <div className="card-title flex ai-center jc-spaceBetween">
                 <div>
                 <span className="heading fs-20 fw-500">{heading}</span>

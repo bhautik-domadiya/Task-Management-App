@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import './App.css';
 import Header from './component/Coman/Header';
 import LeftSection from './component/LeftSection';
-import RightSection from './component/RightSection';
+import RightSection from './component/RightSection';  
 // import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 

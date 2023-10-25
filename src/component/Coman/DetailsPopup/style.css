@@ -1,0 +1,28 @@
+.details-popup{
+    position: absolute;
+z-index: 1;
+background-color: white;
+width: 100%;
+gap: 10px;
+display: flex;
+flex-direction: column;
+padding: 20px;
+border-radius: 8px;
+border: 1px solid var(--Purple-200);
+box-sizing: border-box;
+box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+}
+
+.details-popup>.details-profile{
+    gap: 10px;
+}
+
+@media (max-width: 1250px) {
+    .details-popup{
+        padding: 10px;
+    }
+    .details-popup>div>span{
+        font-size: var(--fs-16);
+    }
+  }
+
