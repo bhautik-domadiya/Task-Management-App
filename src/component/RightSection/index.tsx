@@ -10,11 +10,6 @@ export default function RightSection() {
                 {taskProgressRatio.map((items) => {
                     return (
                         <ProgressBar progressData={items}
-                            // userName={items.userName}
-                            // totalTask={items.totalTask}
-                            // completedTask={items.completedTask}
-                            // key={items.id}
-                            // bgColor={items.bgColor}
                         />
                     )
                 })}

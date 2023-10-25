@@ -1,7 +1,7 @@
 import "../TaskCard/style.css"
 
 export default function TaskCard(props) {
-    const { projectName, projectTitle, workArrow,onClick } = props;
+    const { projectName, projectTitle, workArrow, onClick } = props;
     return (
         <div onClick={onClick} className="task-card-main task br-8 flex ">
             <div className="flex jc-spaceBetween">

@@ -1,4 +1,4 @@
-.profile-icon  {
+.profile-icon {
     min-width: 40px;
     height: 40px;
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04);
@@ -8,8 +8,8 @@
 }
 
 @media (max-width: 768px) {
-    .profile-icon  {
-    min-width: 35px;
-    height: 35px;
+    .profile-icon {
+        min-width: 35px;
+        height: 35px;
     }
-  }
+}

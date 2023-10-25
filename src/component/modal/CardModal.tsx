@@ -30,6 +30,15 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
     const [isToDoOpen, setToDoOpen] = useState(false);
     const [isDetails, setDetails] = useState(false);
 
+    const toggle = () => {
+        setPopupOpen(!isPopupOpen)
+    }
+    const toggleToDo = () => {
+        setToDoOpen(!isToDoOpen)
+    }
+    const toggleDetails = () => {
+        setDetails(!isDetails)
+    }
 
     return (<>
         <div className="overlay" style={overlayStyle}></div>
@@ -52,10 +61,16 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                                 <img alt='edit-img' className='edit' src="assets/icon/Edit.png" />
                             </div>
                             <div className='drop-down'>
-                                <div className="filter-drop-down" onClick={() => setPopupOpen(true)}>
-                                    <img alt='upArrow' src='assets/icon/upArrow.png' />
-                                    <span className='fs-18 fw-400'>Very high</span>
-                                    <img alt='Stroke' src='assets/icon/Stroke.svg' />
+                                <div className="filter-drop-down" >
+                                    <div onClick={toggle} className='flex gap-10 ai-center' >
+                                        <div>
+                                            <img alt='upArrow' src='assets/icon/upArrow.png' />
+                                        </div>
+                                        <span className='fs-18 fw-400'>Very high</span>
+                                    </div>
+                                    <div style={{ cursor: "pointer" }}>
+                                        <img className={isPopupOpen ? 'rotate' : ''} alt='Stroke' src='assets/icon/Stroke.svg' />
+                                    </div>
                                 </div>
                                 <PriorityPopup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
                             </div>
@@ -96,7 +111,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                                 </div>
                                 <div className='card-user-info-action-btn'>
                                     <div className='action-btn' >
-                                        <img  src="assets/icon/Edit-img.svg" alt="edit" />
+                                        <img src="assets/icon/Edit-img.svg" alt="edit" />
                                     </div>
                                     <div className='action-btn delete' >
                                         <img src="assets/icon/delete.svg" alt="delete" />
@@ -114,16 +129,16 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                             <span className='fs-20 fw-600'  >x</span>
                         </div>
                         <div className='drop-down'>
-                            <div className='to-do-drop-down-section' onClick={() => setToDoOpen(true)}>
+                            <div className='to-do-drop-down-section' onClick={toggleToDo}>
                                 <span className='fs-18 fw-400   ' >To Do</span>
-                                <img className='down' src="assets/icon/down.svg" alt="" />
+                                <img className={isToDoOpen ? 'down' : ''} src="assets/icon/down.svg" alt="" />
                             </div>
                             <ToDoPopup isOpen={isToDoOpen} onClose={() => setToDoOpen(false)} />
                         </div>
                         <div className='detailsdrop-down-section'>
-                            <div className='detailsdrop-down' onClick={() => setDetails(true)}>
+                            <div className='detailsdrop-down' onClick={toggleDetails}>
                                 <span className='fs-20 fw-400s'>Details</span>
-                                <img className='down' src="assets/icon/down.svg" alt="" />
+                                <img className={isDetails ? 'down' : ''} src="assets/icon/down.svg" alt="" />
                             </div>
                             <div><DetailsPopup isOpen={isDetails} onClose={() => setDetails(false)} /></div>
                         </div>

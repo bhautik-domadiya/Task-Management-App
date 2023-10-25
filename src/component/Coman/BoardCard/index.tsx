@@ -3,9 +3,9 @@ import TaskCard from "../TaskCard"
 
 
 
-export default function BoardCard(props :any) {
+export default function BoardCard(props: any) {
 
-    const {heading,totalNo,onClick} = props;
+    const { heading, totalNo, onClick } = props;
 
     const tackCardData = [
         {
@@ -31,8 +31,8 @@ export default function BoardCard(props :any) {
         <div className="board-card br-10">
             <div className="card-title flex ai-center jc-spaceBetween">
                 <div>
-                <span className="heading fs-20 fw-500">{heading}</span>
-                <span className="heading fs-20 fw-500">({totalNo})</span>
+                    <span className="heading fs-20 fw-500">{heading}</span>
+                    <span className="heading fs-20 fw-500">({totalNo})</span>
                 </div>
                 <div className="add-card flex br-4 jc-center ai-center" >
                     <span className=" fs-22  fw-600 primary lh-0">+</span>

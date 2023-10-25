@@ -43,7 +43,7 @@
    --grey: #888888;
    --white: #FFFFFF;
    --black: #151515;
-   --peach:#FFEAE5;
+   --peach: #FFEAE5;
    --fs-12: 12px;
    --fs-14: 14px;
    --fs-16: 16px;
@@ -57,12 +57,14 @@
 
  /* color comon */
 
-.Purple-1200{
-  background-color: #d459e8;
-}
-.Purple-1300{
-  background-color: #eddef4;
-}
+ .Purple-1200 {
+   background-color: #d459e8;
+ }
+
+ .Purple-1300 {
+   background-color: #eddef4;
+ }
+
  .green-300 {
    background-color: var(--green-300) !important;
  }
