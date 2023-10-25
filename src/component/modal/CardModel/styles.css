@@ -113,14 +113,16 @@
 .rotate {
     transform: rotate(180deg);
 }
-
+.task-card-model{
+    align-items: center;
+}
 .drop-down>.filter-drop-down {
     cursor: pointer;
     width: 168px;
     height: 100%;
     gap: 6px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 10px 15px 10px 15px;
     border-radius: 8px;

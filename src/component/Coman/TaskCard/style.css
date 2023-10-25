@@ -4,16 +4,13 @@
     filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.04));
     flex-direction: column;
     gap: 15px;
+    cursor: pointer;
 }
 
 .title-card {
     gap: 20px;
 }
 
-.project-title {
-    background: rgba(46, 135, 186, 0.10);
-    padding: 6px 15px;
-}
 
 .project-title>.title {
     color: var(--blue-400);

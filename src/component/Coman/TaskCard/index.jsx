@@ -20,7 +20,7 @@ export default function TaskCard(props) {
             </div>
             <div className="title-card flex jc-spaceBetween">
                 <div className="">
-                    <span className="title fs-18 fw-400" >{projectTitle}</span>
+                    <span className="title fs-16 fw-400" >{projectTitle}</span>
                 </div>
                 <div className="flex ai-center " >
                     <img alt="edit img" src="assets/icon/Edit.png" />

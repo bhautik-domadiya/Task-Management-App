@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import PriorityPopup from '../Coman/PriorityPopup';
+import PriorityPopup from '../../Coman/PriorityPopup';
 import './styles.css';
-import ToDoPopup from '../Coman/ToDoPopup';
-import DetailsPopup from '../Coman/DetailsPopup';
-import Profile from '../Coman/Profile';
+import ToDoPopup from '../../Coman/ToDoPopup';
+import DetailsPopup from '../../Coman/DetailsPopup';
+import Profile from '../../Coman/Profile';
 
 interface CustomModalProps {
     show: boolean;
@@ -29,6 +29,11 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
     const [isPopupOpen, setPopupOpen] = useState(false);
     const [isToDoOpen, setToDoOpen] = useState(false);
     const [isDetails, setDetails] = useState(false);
+    const [isSelect , setIsSelect] = useState(  {
+        id: 1,
+        image: "assets/icon/verylow.svg",
+        name: "Very Low"
+    })
 
     const toggle = () => {
         setPopupOpen(!isPopupOpen)
@@ -62,17 +67,17 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                             </div>
                             <div className='drop-down'>
                                 <div className="filter-drop-down" >
-                                    <div onClick={toggle} className='flex gap-10 ai-center' >
+                                    <div onClick={toggle} className='task-card-model flex gap-10 ai-center' >
                                         <div>
-                                            <img alt='upArrow' src='assets/icon/upArrow.png' />
+                                            <img alt='upArrow' src={isSelect.image} />
                                         </div>
-                                        <span className='fs-18 fw-400'>Very high</span>
+                                        <span className='fs-18 fw-400'>{isSelect.name}</span>
                                     </div>
                                     <div style={{ cursor: "pointer" }}>
                                         <img className={isPopupOpen ? 'rotate' : ''} alt='Stroke' src='assets/icon/Stroke.svg' />
                                     </div>
                                 </div>
-                                <PriorityPopup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
+                                <PriorityPopup isOpen={isPopupOpen} setIsSelect={setIsSelect} onClose={() => setPopupOpen(false)} />
                             </div>
                         </div>
                         <div className='description-section'>
@@ -82,7 +87,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                                 it to make a type specimen book. It has survived not only five centuries.
                             </p>
                         </div>
-                        <div className='comment-section'>
+                        {/* <div className='comment-section'>
                             <span className='comment-section-label'>Comments</span>
                             <div className='comment-section-input'>
                                 <Profile />
@@ -95,11 +100,8 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className='card-info-section'>
-                            {/* <div className="card-info-section-user br-8 flex ai-center  jc-center">
-                                <span className="fs-26 fw-700">B</span>
-                            </div> */}
+                        </div> */}
+                        {/* <div className='card-info-section'>
                             <Profile />
                             <div className='card-info-details'>
                                 <div className='card-user-info-details'>
@@ -122,7 +124,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
 
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className='card-details'>
                         <div className='close-icon colse-display flex' onClick={() => handleClose()}>
