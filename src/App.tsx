@@ -2,15 +2,6 @@ import './App.css';
 import Header from './component/Coman/Header';
 import LeftSection from './component/LeftSection';
 import RightSection from './component/RightSection';
-// import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home />,
-//   },
-// ]);
 
 function App() {
 

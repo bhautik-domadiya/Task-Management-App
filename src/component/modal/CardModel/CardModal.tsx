@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PriorityPopup from '../../Coman/PriorityPopup';
 import './styles.css';
 import ToDoPopup from '../../Coman/ToDoPopup';
 import DetailsPopup from '../../Coman/DetailsPopup';
-import Profile from '../../Coman/Profile';
 
 interface CustomModalProps {
     show: boolean;
@@ -29,12 +28,15 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
     const [isPopupOpen, setPopupOpen] = useState(false);
     const [isToDoOpen, setToDoOpen] = useState(false);
     const [isDetails, setDetails] = useState(false);
-    const [isSelect , setIsSelect] = useState(  {
+    const [isSelect, setIsSelect] = useState({
         id: 1,
         image: "assets/icon/verylow.svg",
         name: "Very Low"
     })
-
+    const [isToDo , setToDo] =  useState(   {
+        id:1,
+        name: "To Do"
+    })
     const toggle = () => {
         setPopupOpen(!isPopupOpen)
     }
@@ -45,13 +47,35 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
         setDetails(!isDetails)
     }
 
+    const overlayRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (overlayRef.current && event.target instanceof Node && !overlayRef.current.contains(event.target)) {
+                setPopupOpen(false);
+                // setToDoOpen(false);
+                setDetails(false);
+            }
+        }
+
+        if (show) {
+            document.addEventListener('mousedown', handleClickOutside);
+        } else {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [show]);
+
     return (<>
         <div className="overlay" style={overlayStyle}></div>
 
-        <div className="modal" style={modalStyle} >
+        <div className="modal" style={modalStyle}  >
 
-            <div className="modal-content">
-                <div className='card-wrapper'>
+            <div className="modal-content" >
+                <div className='card-wrapper'  >
                     <div className='card-description'>
                         <div className='close-icon close-mobile flex' onClick={() => handleClose()}>
                             <span className='fs-20 fw-600'  >x</span>
@@ -65,16 +89,16 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                                 <span className='label fs-18 fw-500'>Description</span>
                                 <img alt='edit-img' className='edit' src="assets/icon/Edit.png" />
                             </div>
-                            <div className='drop-down'>
-                                <div className="filter-drop-down" >
-                                    <div onClick={toggle} className='task-card-model flex gap-10 ai-center' >
+                            <div className='drop-down' ref={overlayRef} >
+                                <div onClick={toggle} className="filter-drop-down" >
+                                    <div className='task-card-model flex gap-10 ai-center' >
                                         <div>
                                             <img alt='upArrow' src={isSelect.image} />
                                         </div>
                                         <span className='fs-18 fw-400'>{isSelect.name}</span>
                                     </div>
                                     <div style={{ cursor: "pointer" }}>
-                                        <img className={isPopupOpen ? 'rotate' : ''} alt='Stroke' src='assets/icon/Stroke.svg' />
+                                        <img className={isPopupOpen ? 'rotate' : ''} alt='Stroke' src='assets/icon/down.svg' />
                                     </div>
                                 </div>
                                 <PriorityPopup isOpen={isPopupOpen} setIsSelect={setIsSelect} onClose={() => setPopupOpen(false)} />
@@ -130,14 +154,14 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose }) =
                         <div className='close-icon colse-display flex' onClick={() => handleClose()}>
                             <span className='fs-20 fw-600'  >x</span>
                         </div>
-                        <div className='drop-down'>
+                        <div className='drop-down' ref={overlayRef}>
                             <div className='to-do-drop-down-section' onClick={toggleToDo}>
-                                <span className='fs-18 fw-400   ' >To Do</span>
+                                <span className='fs-18 fw-400' >{isToDo.name}</span>
                                 <img className={isToDoOpen ? 'down' : ''} src="assets/icon/down.svg" alt="" />
                             </div>
-                            <ToDoPopup isOpen={isToDoOpen} onClose={() => setToDoOpen(false)} />
+                            <ToDoPopup setToDo={setToDo} isOpen={isToDoOpen} onClose={() => setToDoOpen(false)} />
                         </div>
-                        <div className='detailsdrop-down-section'>
+                        <div className='detailsdrop-down-section' ref={overlayRef}>
                             <div className='detailsdrop-down' onClick={toggleDetails}>
                                 <span className='fs-20 fw-400s'>Details</span>
                                 <img className={isDetails ? 'down' : ''} src="assets/icon/down.svg" alt="" />

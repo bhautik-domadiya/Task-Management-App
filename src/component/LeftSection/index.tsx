@@ -3,7 +3,7 @@ import BoardCard from "../Coman/BoardCard"
 import MobileView from "../Coman/MobileView"
 import "../LeftSection/style.css"
 import { CustomModal } from "../modal/CardModel/CardModal"
-import {AddTaskModel} from "../modal/AddTaskModel"
+import { AddTaskModel } from "../modal/AddTaskModel"
 
 
 const boardHeading = [
@@ -13,12 +13,12 @@ const boardHeading = [
         totalNo: "3"
     },
     {
-        id: 1,
+        id: 2,
         heading: "In Progress ",
         totalNo: "2"
     },
     {
-        id: 1,
+        id: 3,
         heading: "Done ",
         totalNo: "1"
     },
@@ -34,7 +34,6 @@ export default function LeftSection() {
     }
     const closeTaskModel = () => {
         setShowTaskModal(false)
-        console.log("hfgdyu")
     }
 
     const openModal = () => {
@@ -62,7 +61,7 @@ export default function LeftSection() {
                     <div className="board-card-all flex">
                         {boardHeading.map((items) => {
                             return (
-                                <BoardCard  onModelOpen={openTaskModel} onClick={openModal} heading={items.heading} totalNo={items.totalNo} />
+                                <BoardCard key={items.id} id={items.id} onModelOpen={openTaskModel} onClick={openModal} heading={items.heading} totalNo={items.totalNo} />
                             )
                         })}
                     </div>
@@ -72,7 +71,7 @@ export default function LeftSection() {
                     <BoardCard onModelOpen={openTaskModel} onClick={openModal} heading="To Do" totalNo="3" />
                 </div>
             </div>
-            <AddTaskModel isOpen={showTaskModal} handleCloseModel={closeTaskModel}/>
+            <AddTaskModel isOpen={showTaskModal} handleCloseModel={closeTaskModel} />
             <CustomModal show={showModal} handleClose={closeModal} />
         </>
     )

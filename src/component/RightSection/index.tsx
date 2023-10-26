@@ -9,7 +9,7 @@ export default function RightSection() {
             <div className="progress-main flex flex-direction">
                 {taskProgressRatio.map((items) => {
                     return (
-                        <ProgressBar progressData={items}
+                        <ProgressBar key={items.id} progressData={items}
                         />
                     )
                 })}

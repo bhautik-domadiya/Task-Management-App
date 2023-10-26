@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../PriorityPopup/style.css"
 
 const popupData = [
@@ -42,7 +41,7 @@ export default function PriorityPopup(props: any) {
             {isOpen && <div className="priority-popup">
                 {popupData.map((items) => {
                     return (
-                        <div className="popup-data flex ai-center" onClick={()=>handleClick(items)}>
+                        <div key={items.id} className="popup-data flex ai-center" onClick={()=>handleClick(items)}>
                             <img alt="priority img" src={items.image} />
                             <span className="fs-16 fw-400">
                                 {items.name}

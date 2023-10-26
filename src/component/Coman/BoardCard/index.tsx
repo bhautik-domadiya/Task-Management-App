@@ -35,14 +35,14 @@ export default function BoardCard(props: any) {
                     <span className="heading fs-20 fw-500">{heading}</span>
                     <span className="heading fs-20 fw-500">({totalNo})</span>
                 </div>
-                <div className="add-card flex br-4 jc-center ai-center" onClick={onModelOpen} >
+                {props.id === 1 &&<div className="add-card flex br-4 jc-center ai-center" onClick={onModelOpen} >
                     <span className=" fs-22  fw-600 primary lh-0">+</span>
-                </div>
+                </div>}
             </div>
             <div className="flex ticket-card">
                 {tackCardData.map((items) => {
                     return (
-                        <TaskCard onClick={onClick} key={items.id} projectName={items.projectName} projectTitle={items.projectTitle} workArrow={items.workArrow} />
+                        <TaskCard  onClick={onClick} key={items.id} projectName={items.projectName} projectTitle={items.projectTitle} workArrow={items.workArrow} />
                     )
                 })}
             </div>
