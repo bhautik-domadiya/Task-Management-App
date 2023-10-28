@@ -1,0 +1,44 @@
+.details-popup {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--Purple-200);
+    box-sizing: border-box;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+}
+
+.profile-icon-details{
+    min-width: 30px;
+    height: 30px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04);
+    color: var(--primary);
+    border: 1px solid var(--Purple-200);
+}
+
+
+.details-content {
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.details-content:hover {
+    background-color: #f6faff;
+
+}
+
+@media (max-width: 1250px) {
+    .details-popup {
+        padding: 10px;
+    }
+
+    .details-popup>div>span {
+        font-size: var(--fs-16);
+    }
+}

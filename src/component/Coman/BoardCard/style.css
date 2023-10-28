@@ -1,0 +1,52 @@
+.board-card {
+    background-color: var(--white);
+    width: 33%;
+    min-height: calc(100% - 100px);
+}
+
+.board-card>.card-title {
+    padding: 15px;
+    border-bottom: 1px solid #D8D0DA;
+}
+
+.add-card {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: var(--Purple-1100);
+}
+
+.ticket-card {
+    padding: 15px;
+    gap: 20px;
+    flex-direction: column;
+    height: calc(100% - 90px);
+    overflow-y: scroll;
+}
+
+@media (max-width: 1440px) {
+    .board-card>.card-title {
+        padding: 15px;
+    }
+
+    .ticket-card {
+        padding: 15px;
+    }
+
+}
+
+@media (max-width: 1280px) {
+    .heading {
+        font-size: var(--fs-18);
+    }
+}
+
+@media (max-width: 768px) {
+    .board-card {
+        width: 100%;
+    }
+
+    .heading {
+        font-size: var(--fs-18);
+    }
+}
