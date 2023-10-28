@@ -126,7 +126,7 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose, tas
                                         <div>
                                             <img alt='upArrow' src={isSelect ? isSelect.image : ''} />
                                         </div>
-                                        <span className='fs-18 fw-400'>{isSelect ? isSelect.name : ''}</span>
+                                        <span className='fs-16 fw-400'>{isSelect ? isSelect.name : ''}</span>
                                     </div>
                                     <div style={{ cursor: "pointer" }}>
                                         <img className={isPopupOpen ? 'rotate' : ''} alt='Stroke' src='assets/icon/Stroke.svg' />

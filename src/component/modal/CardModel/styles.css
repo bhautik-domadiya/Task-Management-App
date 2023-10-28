@@ -117,7 +117,7 @@
 }
 .drop-down>.filter-drop-down {
     cursor: pointer;
-    width: 168px;
+    min-width: 168px;
     height: 100%;
     gap: 6px;
     display: flex;
