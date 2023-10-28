@@ -151,14 +151,14 @@ export const AddTaskModel: React.FC<CustomModalProps> = ({ isOpen, handleCloseMo
                             </div>
                             <div className='task-card-description-header'>
                                 <div className="add-name-data">
-                                    <span className='label task-name fs-16 fw-500'>Project Name</span>
+                                    <span className='label task-name fs-16 fw-500'>Task Name</span>
                                     <div>
                                         <input
                                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
                                             name="title"
                                             className="add-input-fild"
                                             type="text"
-                                            placeholder="Project name"
+                                            placeholder="Task name"
                                             value={inputField?.title}
                                         />
                                     </div>
