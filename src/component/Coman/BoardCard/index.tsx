@@ -1,48 +1,42 @@
+import { userRoles } from "../../../utils/constants";
+import { TaskData } from "../../../utils/tasks.inteface";
 import "../BoardCard/style.css"
 import TaskCard from "../TaskCard"
 
+interface IProps {
+    heading:string;
+    onClick:(item:TaskData | null)=>void;
+    onModelOpen:()=>void;
+    isAdmin?:string | undefined;
+    id?:number,
+    taskList?:TaskData[] | null,
+    cardIndex?:number,
+    key:string
+}
 
-
-export default function BoardCard(props: any) {
-
-    const { heading, totalNo, onClick,onModelOpen } = props;
-
-
-    const tackCardData = [
-        {
-            id: 1,
-            projectName: "Nangita",
-            projectTitle: "Implement Feedback Collector",
-            workArrow: "assets/icon/upArrow.png",
-        },
-        {
-            id: 2,
-            projectName: "Magic8",
-            projectTitle: "Bump version for new API for billing",
-            workArrow: "assets/icon/low.svg",
-        },
-        {
-            id: 3,
-            projectName: "Sqor",
-            projectTitle: "Add NPS feedback to waldboard",
-            workArrow: "assets/icon/low.svg",
-        },
-    ]
+export default function BoardCard(props: IProps) {
+    const { heading, onClick, onModelOpen ,cardIndex, isAdmin,taskList ,key} = props;
     return (
-        <div className="board-card br-10">
+        <div className="board-card br-10" key={key}>
             <div className="card-title flex ai-center jc-spaceBetween">
                 <div>
-                    <span className="heading fs-20 fw-500">{heading}</span>
-                    <span className="heading fs-20 fw-500">({totalNo})</span>
+                    <span className="heading text-capitalize fs-20 fw-500">{heading}</span>
+                    <span className="heading fs-20 fw-500">({taskList?.length})</span>
                 </div>
+                {(isAdmin === userRoles.admin &&  cardIndex === 0) && 
                 <div className="add-card flex br-4 jc-center ai-center" onClick={onModelOpen} >
                     <span className=" fs-22  fw-600 primary lh-0">+</span>
-                </div>
+                </div>}
             </div>
+            
             <div className="flex ticket-card">
-                {tackCardData.map((items) => {
+                {taskList && taskList.map((items) => {
+                    
                     return (
-                        <TaskCard onClick={onClick} key={items.id} projectName={items.projectName} projectTitle={items.projectTitle} workArrow={items.workArrow} />
+                        <TaskCard 
+                            onClick={()=>onClick(items || null)}  
+                            taskItem={items}
+                        />
                     )
                 })}
             </div>

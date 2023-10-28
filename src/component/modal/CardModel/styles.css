@@ -54,10 +54,9 @@
 }
 
 .modal-content>.card-wrapper>.card-description>.card-description-header>.card-label {
-    max-width: 110px;
+    max-width: 320px;
     height: 38px;
     border-radius: 30px;
-    background: rgba(46, 135, 186, 0.10);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -300,7 +299,7 @@
 }
 
 .to-do-drop-down-section {
-    width: 113px;
+    width: 158px;
     height: 44px;
     padding: 10px 15px;
     display: flex;
@@ -537,16 +536,36 @@
 
 
 
-
+  .mobile-user-profile{
+    display: none;
+}
 
 @media screen and (max-width:768px) {
     .modal-content {
         width: 100%;
 
     }
-
     .modal-content>.card-wrapper {
         padding: 10px;
+    }
+    .mobile-user-profile{
+        display: flex;
+        gap: 5px;
+    }
+    .mobile-log-out{
+        height: 37px;
+        width: 37px;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04);
+        color: var(--primary);
+        border: 1px solid var(--Purple-200);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-log-out > span{
+        font-size: 35px;
+        margin-bottom: 5px;
     }
 }
 

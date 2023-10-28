@@ -1,48 +1,30 @@
-import { useState } from "react";
 import "../PriorityPopup/style.css"
+import { IPriorityList, priorityList } from "../../../utils/constants";
 
-const popupData = [
-    {
-        id: 1,
-        image: "assets/icon/verylow.svg",
-        name: "Very Low"
-    },
-    {
-        id: 2,
-        image: "assets/icon/low.svg",
-        name: "Low"
-    },
-    {
-        id: 3,
-        image: "assets/icon/high.svg",
-        name: "High"
-    },
-    {
-        id: 4,
-        image: "assets/icon/veryHigh.svg",
-        name: "Very High"
-    },
-    {
-        id: 5,
-        image: "assets/icon/intermediate.svg",
-        name: "Inter Mediate"
-    },
-]
+interface IProps {
+    isOpen:boolean,
+    onClose:()=>void;
+    handleSelect?:(value:IPriorityList | null)=>void;
+    setIsSelect?:(value:IPriorityList | null)=>void;
+}
 
-export default function PriorityPopup(props: any) {
-    const { isOpen, onClose ,setIsSelect} = props;
+export default function PriorityPopup(props: IProps) {
+    const { isOpen, onClose ,handleSelect,setIsSelect} = props;
 
     const handleClick = (items : any) => {
-        setIsSelect(items)
-        onClose()
+        if(items){
+            setIsSelect && setIsSelect(items);
+            handleSelect && handleSelect(items)
+            onClose();
+        } 
     }
   
     return (
         <>
             {isOpen && <div className="priority-popup">
-                {popupData.map((items) => {
+                {priorityList.map((items) => {
                     return (
-                        <div className="popup-data flex ai-center" onClick={()=>handleClick(items)}>
+                        <div className="popup-data flex ai-center" onClick={()=>handleClick(items)} key={items.id}>
                             <img alt="priority img" src={items.image} />
                             <span className="fs-16 fw-400">
                                 {items.name}

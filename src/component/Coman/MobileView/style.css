@@ -24,6 +24,10 @@
     background: #A633CC;
     color: white;
 }
+.active-tab {
+    background: #A633CC !important;
+    color: white;
+}
 
 @media (max-width: 767px) {
     .mobile-board {
