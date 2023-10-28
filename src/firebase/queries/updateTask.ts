@@ -1,4 +1,3 @@
-import { IDynamicTypes } from "../../utils/constants";
 import { firestore } from "../firebase";
 import { collection } from "./utils/collection.utils";
 

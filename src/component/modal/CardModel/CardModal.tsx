@@ -39,7 +39,6 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose, tas
     const overlayRef = useRef<HTMLDivElement | null>(null);
     const [isPopupOpen, setPopupOpen] = useState(false);
     const [isToDoOpen, setToDoOpen] = useState(false);
-    const [isDetails, setDetails] = useState(false);
     const [isSelect, setIsSelect] = useState<IPriorityList | null>(defaultPriority);
     const [selectedStatus, setSelectedStatus] = useState<string>('');
     const [updateTime, setUpdateTime] = useState<string>('');
@@ -76,11 +75,6 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose, tas
             }
         }
         document.addEventListener('click', handleClickOutside);
-        // if (show) {
-        //     document.addEventListener('mousedown', handleClickOutside);
-        // } else {
-        //     document.removeEventListener('mousedown', handleClickOutside);
-        // }
         return () => {
             document.removeEventListener('click', handleClickOutside);
         };
@@ -171,12 +165,6 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose, tas
                                 handleTaskStatus={(value: IToDoList) => handleTaskStatus(value)}
                             />
                         </div>
-                        {/* <div className='detailsdrop-down-section'>
-                            <div className='detailsdrop-down' onClick={toggleDetails}>
-                                <span className='fs-20 fw-400s'>Details</span>
-                                <img className={isDetails ? 'down' : ''} src="assets/icon/down.svg" alt="" />
-                            </div>
-                        </div> */}
                         <div className='log-time-checker'>
                             <span className='time'>Created {taskITem ? formatTimeAgo(taskITem.createdAt) : '-'}</span>
                             <span className='time'>Updated {taskITem?.updatedAt ? formatTimeAgo(Number(updateTime)) : '-'}</span>
@@ -187,45 +175,3 @@ export const CustomModal: React.FC<CustomModalProps> = ({ show, handleClose, tas
         </div>
     </>);
 };
-
-
-//below code is for show the details and comment section 
-
-{/* <div className='comment-section'>
-                            <span className='comment-section-label'>Comments</span>
-                            <div className='comment-section-input'>
-                                <Profile />
-                                <div className='comment-section-input-field'>
-                                    <div className="input-send-box">
-                                        <div className='send-button'>
-                                            <img alt='send-img' className="uil uil-search" src="assets/icon/Send.svg" />
-                                        </div>
-                                        <input type="text" placeholder="Search here..." />
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
-{/* <div className='card-info-section'>
-                            <Profile />
-                            <div className='card-info-details'>
-                                <div className='card-user-info-details'>
-                                    <span className='user-name'>Brooklyn Simmons</span>
-                                    <span className='time'>4 minutes ago</span>
-                                </div>
-                                <div className='card-user-info-sample-text'>
-                                    <span>Lorem Ipsum is simply dummy text.</span>
-                                </div>
-                                <div className='card-user-info-action-btn'>
-                                    <div className='action-btn' >
-                                        <img src="assets/icon/Edit-img.svg" alt="edit" />
-                                    </div>
-                                    <div className='action-btn delete' >
-                                        <img src="assets/icon/delete.svg" alt="delete" />
-                                    </div>
-                                    <div className='action-btn emoji' >
-                                        <img src="assets/icon/emoji-smile.svg" alt="emoji" />
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div> */}

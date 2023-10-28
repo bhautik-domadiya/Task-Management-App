@@ -37,7 +37,7 @@ const fetchTaskList = async () => {
       userRef.get()
         .then((userDoc:any) => {
           if (userDoc.exists) {
-            const userData = userDoc.data();
+            userDoc.data();
           } else {
             console.log("User document not found for task:", taskData);
           }
